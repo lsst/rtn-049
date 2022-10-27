@@ -1,0 +1,144 @@
+\section{Teams and their On-Sky Nighttime Responsibilities}
+
+It is envisioned that there will be at least three people at the summit during nighttime observations:
+
+\begin{itemize}
+    \item 1 Scientist (Commissioning Scientist -> Operations Scientist) in charge of night time activities and observations who is there at least until midnight with the swing shift
+    \item 2 Operations Specialists covering the entire night (2 on swing `early' shift, followed by 2 on `late' night shift)
+    \item Additional possible staff include: managers, commissioning scientists, camera scientists/engineers, as well as others depending on the needs of the commissioning/observing activity
+\end{itemize}
+
+The limit of on-site nighttime staff is due to hotel room availability.  It is not anticipated that staff from the following groups will be regularly joining the nighttime observing crew: DevOps staff, software engineering staff, electrical, electronics, mechanical, or optical staff.  
+However, it is anticipated that some of these Rubin staff will participate in out of hours support, either or both remotely or in-person for emergencies to get systems up and running.
+
+This document will lay out the different out of hours support which will be needed and must be compensated for.
+
+\section{Types of Out Of Hours Support}
+
+There are two major types of out of hours support:
+
+\begin{itemize}
+    \item Remote On-Call Support (i.e. logging into the system from home to fix a problem)
+    \item In-Person Emergency Support (driving up to the summit to take care of a critical situation)
+\end{itemize}
+
+Remote support will be more common than in-person support.  Remote support can be provided by DevOps, software or hardware personnel.  This document refers to this type of work as remote `On-Call' out of hours support. Compensation is provided for On-Call support for the duration of the On-Call hours assigned and additionally for the hours spent on fault resolution.  Please see the Allowance sections below for more details.    
+
+In-person support would entail waking a person up in the case of an emergency and having them go up to the summit to fix a severe problem out of hours. This will be a rare occurrence, and should be avoided unless there is a safety issue with the telescope systems which requires in-person urgent attention.   Additionally, in-person support could be requested when the needs of observing are critical and must move forward and it therefore makes sense to have a person drive up to fix the systems same-night in order for observations to make progress.  The needs of in-person support must be weighted against waiting for the next workday for the day crew to triage and resolve the problem.
+
+In-person out of hours support may be via an independent vehicle to be on summit as quickly as possible to solve an emergency issue at night.  In-person out of hours support may also be via the Rubin bus system on a day the staff member was not scheduled to arrive at the observatory summit (Saturday, Sunday, holiday) in order to fix an urgent problem.
+
+Some out of hours support could start off as remote support and escalate to in-person support out of hours.  If an issue de-escalates during remote out of hours support and is deemed no longer urgent, then the following day shift is then designated to fixing it, which is not considered out of hours support.  
+
+\section{Teams That Provide Compensated Out Of Hours Support}
+
+Remote on-call out of hours support needs to be provided by DevOps staff as well as electronics team members.  These staff will follow the On-Call Shift process outlined below.  In rare cases, the remote electronics on-call staff may be needed for In-Person support out of hours if the problem is deemed urgent enough.  Compensation for on-call out of hours support is outlined in the On-Call Shift Fixed Allowance section.
+
+In-Person emergency out of hours support is anticipated as needed from the following Rubin teams:  electrical, electronics, mechanical, and optical groups.  These staff (except electronics) will not be on an On-Call Shift Register for remote out of hours support.  However, when there is an emergency these staff will be called for out of hours support and asked to come to the summit in the event of a critical or high priority issue which must be resolved outside of normal working hours.  Compensation for In-Person out of hours support is outlined in the Resolution Shift Variable Allowance section.
+
+\section{Monitoring}
+
+DM DevOps will use the following monitoring stack:
+
+\begin{itemize}
+    \item Icinga
+    \item Prometheus
+    \item Uptime Robot
+    \item Custom Made Tools
+\end{itemize}
+
+And any other triggering event tool. 
+
+The Technical teams will use some version of the DM DevOps monitoring tool set where applicable.  
+A concerted effort will be made to be sure that one cohesive toolset is used for all teams who need to provide out of hour support for Rubin.
+A phone list will exist in order to reach/wake-up staff for In-Person summit out of hours support.  It will be made available to all observing staff, management and all staff members who are on the In-Person out of hours support list.  Everyone on this list must agree to be on the phone list a-priori.
+
+\section{Rubin vNOC - TBD}
+
+A virtual Network Operations Center (vNOC), will monitor the critical components of Rubin's infrastructure after hours. 
+
+DM DevOps will provide a dashboard with metrics of such components, and a Web form to trigger an alert to the On-Call shift.  
+
+Rubin's vNOC won't be able to escalate alarms; the escalation will be managed by the incident management tool.
+
+However, if an alarm has not been acknowledged in the 20 minutes after Rubin's vNOC has reported it, they (A2: who?) will be instructed to execute an emergency escalation procedure, and call a list of staff in sequential mode until someone answers the phone.
+
+The Rubin vNOC could be a separate instance from the LHN vNOC and despite Rubin'€™s vNOC focus is the infrastructure in Chile, some LHN data points will also be monitored. 
+
+\textit{
+(A2 Note:  Not sure if this is generic and all applicable across all teams - please advise).}
+
+\section{Alerting}
+
+Alerts will be triggered by the monitoring stack and routed to the incident management tool using the commodity internet. 
+
+The incident management tool will control the shift rotations, escalations, and will alert according to the severity of the fault. 
+
+The level of the severity will be quantified according to the amount of users affected by the fault.
+
+\begin{itemize}
+    \item Critical: Many users affected. 
+    \item Major: Some users affected.
+    \item Minor: A couple of users are affected
+    \item Warning: No users affected, service degraded but functional. 
+\end{itemize}
+
+Only \textbf{Critical} and \textbf{Major} faults will trigger the notification to the On-Call shift. 
+
+For In-Person out of hours support, the manager in charge of observing will make the decision as to whether the issue is deemed \textbf{Critical} or \textbf{Major} enough to warrant going to the call list for In-Person out of hours support.
+
+
+\section{On-Call Shift}
+
+The On Call Shift will be any service organized by the DevOps or DM Manager, or an equivalent position covering the Technical and Commissioning/Operations teams, and in all cases authorized by Human Resources, in which one or more staff per subsystem must be available to work outside of working hours to work in an emergency. 
+The employee in this On-Call Shift, must be previously informed by email so that he/she can provide his/her agreement using this same medium. Additionally, the employee in On-Call Shift will receive the necessary equipment to be contacted and to work out of hours. 
+
+To ensure the resting period of the employee, if the resting period is interrupted for more than 30 minutes, the employee will be able to delay their arrival on the next day, in the same proportion, informing the manager.
+
+\section{In-Person Resolution Shift}
+
+The In-Person Resolution Shift will be any service organized by the manager of observing or the equivalent position covering the Technical and Commissioning/Operations teams, and in all cases authorized by Human Resources, in which one or more staff per subsystem must be available to work outside of working hours to work in an emergency. 
+The employee in this emergency phone list for In-Personal Resolution Shift, must be previously informed by email so that he/she can provide his/her agreement using this same medium. Additionally, the employee in the In-Personal Resolution Shift will receive the necessary equipment to be contacted and to work out of hours. 
+
+To ensure the resting period of the employee, a hotel room will be provided at the summit when a staff member drove up to the summit themselves to fix a fault, unless they can return by bus.  The staff member can delay their next workday(s), in the same proportion as the on-summit fault resolution duration, informing the manager.
+
+\section{On-Call Shift Fixed Allowance}
+
+The employee in this shift will receive the following allowance, regardless of whether emergencies are reported during the On-Call shift.
+
+\begin{center} -------------------  On-Call Wage Calculation ----------------- \end{center}
+10\% x [Number of hours in On-call shift] x [Hourly Gross Salary]
+\begin{center} ------------------------------------------------------------------------- \end{center}
+
+
+\section{Resolution Shift Variable Allowance}
+
+In the case the employee's On-Call shift is called to work and executes his/her services, thereby phasing into the `resolution shift', he/she will receive every worked hour with a cost of 100\% of the hourly gross salary, and a 100\% increase of the hourly gross salary if the emergency happens on a Sunday or holiday. Every time the employee in the On-Call Shift is required to work, the minimum to pay is the equivalent of 1 hour.  
+
+For In-Person on summit out of hours support, a full 8-hr work day will be paid to the staff which must go to the summit for out of hours support.  The Resolution Shift compensation calculation is the same:  every worked hour (min 8 hrs) with a cost of 100\% of the hourly gross salary, and a 100\% increase of the hourly gross salary if the emergency happens on a Sunday or holiday.  If multiple days are required for out of hours support, every day is paid at 8 hours, regardless the number of hours spent on the resolution per day.  The Resolution Shift ends on the day the staff member returns from the summit (return day is paid for).
+
+\begin{center} -------------------  Resolution Wage Calculation ----------------- \end{center}
+Non Holiday or Sunday = 100\% x [Number of hours worked during On-call shift] x [Hourly Gross Salary] 
+
+\par
+On a Holiday or Sunday = 200\% x [Number of hours worked during On-call shift] x [Hourly Gross Salary] 
+\begin{center} ----------------------------------------------------------------------------- \end{center}
+
+
+In this instance, a Chilean holiday and Sunday is considered the 24-hour period starting at midnight to the following midnight.   
+
+Given the complexity of Rubin's infrastructure, the resolution of a fault may require the participation of one or more Rubin team members. If this is the case, the Resolution Variable Allowance will also be applied to the other Rubin team members working to resolve the fault. 
+
+After its execution, this allowance will be included in the next month's wage.
+
+
+\section{Fault Resolution}
+
+Most of the faults during the On-Call Shift will be solved or worked around; however, the resolution of some faults may require significant modifications in Rubin's platform or hardware that could compromise the integrity of data or other systems. These faults won't be repaired during the night and will be re-evaluated during the following day by the various Rubin daytime teams (during regular work hours).
+
+The decision to leave a fault open until the next morning will be made by the On-Call engineer working on the fault in communication with the nighttime observing team. If leaving the fault open until the following day blocks the observing, the On-Call engineer (in combination with their management as needed) will decide to leave the fault open in coordination with the manager responsible for the observing.  
+
+In-Person out of hours fault resolution will continue until the problem is resolved or until the manager responsible for observing de-escalates the issue to day-time normal work hours activities.  The goal always being to get the telescope up and running the same night as the initial fault, or at worse case, the following night.  If there are no more hours of observing left that night, the manager must make the decision as to whether the Fault Resolution In-Person staff continues their emergency work (after resting as needed) or whether they are done with their end of the fault resolution, in which case they can return home (or go to the hotel).  The upcoming daytime crew can continues to make progress on the fault during normal working hours.
+
+
+
