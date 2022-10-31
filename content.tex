@@ -29,9 +29,9 @@ This will be a rare occurrence, and should be avoided unless there is a safety i
 Additionally, in-person support may be requested when the needs of observing are time-critical and having someone immediately drive up to resolve the issue is worthwhile in order to continue observations.  
 The needs of in-person support must be weighted against waiting for the next workday for the day crew to triage and resolve the problem.
 
-In-person out of hours support may be via an independent vehicle to be on summit as quickly as possible to solve an emergency issue at night.  In-person out of hours support may also be via the Rubin bus system on a day the staff member was not scheduled to arrive at the observatory summit (Saturday, Sunday, holiday) in order to fix an urgent problem.
+In-person out of hours support may be via an independent AURA vehicle in order to be on summit as quickly as possible to solve an emergency issue at night.  In-person out of hours support may also be via the Rubin bus system on a day the staff member was not scheduled to arrive at the observatory summit (Saturday, Sunday, holiday) in order to fix an urgent problem.  Note that any staff who will need to drive to/from the summit will need to successfully pass a driving test and must have approval to drive to/from the summit in advance of being put on the In-Person support list.  This driving approval process is performed by the Safety Team.
 
-Some out of hours support could start off as remote support and escalate to in-person support out of hours.  If an issue de-escalates during remote out of hours support and no longer urgent, then the following day shift is then designated to fixing it, which is not considered out of hours support.
+Some out of hours support could start off as remote support and escalate to in-person support out of hours.  If an issue de-escalates during remote out of hours support and becomes no longer urgent, then the following day shift is then designated to fixing it, which is not considered out of hours support.
 
 \section{Teams That Provide Compensated Out Of Hours Support}
 
@@ -73,9 +73,11 @@ The Rubin vNOC could be a separate instance from the Long Haul Network (LHN) vNO
 
 \section{Alerting}
 
-Alerts will be triggered by the monitoring stack and routed to the incident management tool using the commodity internet.
+Alerts to On-Call Support and In-Person Emergency Support staff and can be activated by the people present at the summit during on-sky observing.  It is anticipated this will be done using a call list.
 
-The incident management tool will control the shift rotations, escalations, and will alert according to the severity of the fault.
+Additionally, alerts will also be triggered by the monitoring stack and routed to the incident management tool using the commodity internet.  These automated alerts will more likely be DevOps related.
+
+In DevOps the incident management tool will control the shift rotations, escalations, and will alert according to the severity of the fault.
 
 The level of the severity will be quantified according to the amount of users affected by the fault.
 
